@@ -8,14 +8,57 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State private var lowerLeft = defaultLowerLeft
+    @State private var upperRight = defaultUpperRight
+
+    @State private var isDragging = false
+    @State private var firstPoint = CGPoint()
+    @State private var secondPoint = CGPoint()
+    
+    @Binding var zoomReset : Action
+    @Binding var zoomPrevious : Action
+            
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+   
+        let logisticView = LogisticView(lowerLeft: $lowerLeft, upperRight: $upperRight, isDragging: $isDragging, firstPoint: $firstPoint, secondPoint: $secondPoint)
+        VStack {
+            HStack {
+                Text("Lower Left: \(lowerLeft.x), \(lowerLeft.y)")
+                    .padding(20)
+                    .foregroundColor(isDragging ? .white : .tektronixGreen)
+                    .font(.title)
+                Text("Upper Right: \(upperRight.x), \(upperRight.y)")
+                    .padding(20)
+                    .foregroundColor(isDragging ? .white : .tektronixGreen)
+                    .font(.title)
+            }.background(Color.black)
+                .padding([.bottom],-20)
+            ZStack {
+                logisticView
+                    .frame(width: 1200, height: 800)
+                    .onAppear(perform: {
+                        zoomReset = { logisticView.reset() }
+                        Task {
+                            await logisticView.update()
+                        }
+                    })
+                                        
+                if (isDragging) {
+                    let width = abs(firstPoint.x - secondPoint.x)
+                    let height = abs(firstPoint.y - secondPoint.y)
+                    let x = min(firstPoint.x,secondPoint.x) + 0.5 * width
+                    let y = min(firstPoint.y,secondPoint.y) + 0.5 * height
+                    
+                    Rectangle()
+                        .stroke(lineWidth: 5)
+                        .fill(.white)
+                        .frame(width: width, height: height, alignment: .topLeading)
+                        .position(x: x, y: y)
+                }
+            }
+        }.background(Color.black)
+        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

@@ -7,19 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373C87BD27E7C613008AEAF2 /* LogisticCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C87BC27E7C613008AEAF2 /* LogisticCommands.swift */; };
+		373C87C127E8E3A0008AEAF2 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C87C027E8E3A0008AEAF2 /* Action.swift */; };
+		373C87C327E93B8D008AEAF2 /* LogisticMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C87C227E93B8D008AEAF2 /* LogisticMap.swift */; };
+		373D3F9227EAD94B005118A8 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D3F9127EAD94B005118A8 /* Stack.swift */; };
+		3775C55327CC9B570044877B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775C55227CC9B570044877B /* Colors.swift */; };
+		3775C55527CEB8FF0044877B /* Memoize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775C55427CEB8FF0044877B /* Memoize.swift */; };
 		3777BFE127CAA04900DC2B0E /* ComplexLogisticApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3777BFE027CAA04900DC2B0E /* ComplexLogisticApp.swift */; };
 		3777BFE327CAA04900DC2B0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3777BFE227CAA04900DC2B0E /* ContentView.swift */; };
 		3777BFE527CAA04C00DC2B0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3777BFE427CAA04C00DC2B0E /* Assets.xcassets */; };
 		3777BFE827CAA04C00DC2B0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3777BFE727CAA04C00DC2B0E /* Preview Assets.xcassets */; };
+		3785790927CC2C9B001867C8 /* Array+Concurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3785790827CC2C9B001867C8 /* Array+Concurrent.swift */; };
+		37A9744B27CAF7FC003A6EF8 /* LogisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A9744A27CAF7FC003A6EF8 /* LogisticView.swift */; };
+		37A9744D27CAFE45003A6EF8 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A9744C27CAFE45003A6EF8 /* Bitmap.swift */; };
+		37A9745027CB045B003A6EF8 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 37A9744F27CB045B003A6EF8 /* ComplexModule */; };
+		37A9745227CB045B003A6EF8 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = 37A9745127CB045B003A6EF8 /* Numerics */; };
+		37A9745427CB045B003A6EF8 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = 37A9745327CB045B003A6EF8 /* RealModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		373C87BC27E7C613008AEAF2 /* LogisticCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticCommands.swift; sourceTree = "<group>"; };
+		373C87C027E8E3A0008AEAF2 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		373C87C227E93B8D008AEAF2 /* LogisticMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticMap.swift; sourceTree = "<group>"; };
+		373D3F9127EAD94B005118A8 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		3775C55227CC9B570044877B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3775C55427CEB8FF0044877B /* Memoize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoize.swift; sourceTree = "<group>"; };
 		3777BFDD27CAA04900DC2B0E /* ComplexLogistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplexLogistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3777BFE027CAA04900DC2B0E /* ComplexLogisticApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexLogisticApp.swift; sourceTree = "<group>"; };
 		3777BFE227CAA04900DC2B0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3777BFE427CAA04C00DC2B0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3777BFE727CAA04C00DC2B0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3777BFE927CAA04C00DC2B0E /* ComplexLogistic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComplexLogistic.entitlements; sourceTree = "<group>"; };
+		3785790827CC2C9B001867C8 /* Array+Concurrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Concurrent.swift"; sourceTree = "<group>"; };
+		37A9744A27CAF7FC003A6EF8 /* LogisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticView.swift; sourceTree = "<group>"; };
+		37A9744C27CAFE45003A6EF8 /* Bitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A9745227CB045B003A6EF8 /* Numerics in Frameworks */,
+				37A9745027CB045B003A6EF8 /* ComplexModule in Frameworks */,
+				37A9745427CB045B003A6EF8 /* RealModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +77,16 @@
 			isa = PBXGroup;
 			children = (
 				3777BFE027CAA04900DC2B0E /* ComplexLogisticApp.swift */,
+				373C87C027E8E3A0008AEAF2 /* Action.swift */,
 				3777BFE227CAA04900DC2B0E /* ContentView.swift */,
+				373C87C227E93B8D008AEAF2 /* LogisticMap.swift */,
+				37A9744A27CAF7FC003A6EF8 /* LogisticView.swift */,
+				373C87BC27E7C613008AEAF2 /* LogisticCommands.swift */,
+				3775C55227CC9B570044877B /* Colors.swift */,
+				3775C55427CEB8FF0044877B /* Memoize.swift */,
+				3785790827CC2C9B001867C8 /* Array+Concurrent.swift */,
+				373D3F9127EAD94B005118A8 /* Stack.swift */,
+				37A9744C27CAFE45003A6EF8 /* Bitmap.swift */,
 				3777BFE427CAA04C00DC2B0E /* Assets.xcassets */,
 				3777BFE927CAA04C00DC2B0E /* ComplexLogistic.entitlements */,
 				3777BFE627CAA04C00DC2B0E /* Preview Content */,
@@ -85,6 +118,11 @@
 			dependencies = (
 			);
 			name = ComplexLogistic;
+			packageProductDependencies = (
+				37A9744F27CB045B003A6EF8 /* ComplexModule */,
+				37A9745127CB045B003A6EF8 /* Numerics */,
+				37A9745327CB045B003A6EF8 /* RealModule */,
+			);
 			productName = ComplexLogistic;
 			productReference = 3777BFDD27CAA04900DC2B0E /* ComplexLogistic.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +151,9 @@
 				Base,
 			);
 			mainGroup = 3777BFD427CAA04900DC2B0E;
+			packageReferences = (
+				37A9744E27CB045B003A6EF8 /* XCRemoteSwiftPackageReference "swift-numerics" */,
+			);
 			productRefGroup = 3777BFDE27CAA04900DC2B0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +180,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A9744D27CAFE45003A6EF8 /* Bitmap.swift in Sources */,
+				373C87C127E8E3A0008AEAF2 /* Action.swift in Sources */,
+				373C87C327E93B8D008AEAF2 /* LogisticMap.swift in Sources */,
+				373C87BD27E7C613008AEAF2 /* LogisticCommands.swift in Sources */,
+				3775C55327CC9B570044877B /* Colors.swift in Sources */,
+				373D3F9227EAD94B005118A8 /* Stack.swift in Sources */,
 				3777BFE327CAA04900DC2B0E /* ContentView.swift in Sources */,
+				37A9744B27CAF7FC003A6EF8 /* LogisticView.swift in Sources */,
+				3785790927CC2C9B001867C8 /* Array+Concurrent.swift in Sources */,
 				3777BFE127CAA04900DC2B0E /* ComplexLogisticApp.swift in Sources */,
+				3775C55527CEB8FF0044877B /* Memoize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +384,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		37A9744E27CB045B003A6EF8 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		37A9744F27CB045B003A6EF8 /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37A9744E27CB045B003A6EF8 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		37A9745127CB045B003A6EF8 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37A9744E27CB045B003A6EF8 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+		37A9745327CB045B003A6EF8 /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37A9744E27CB045B003A6EF8 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3777BFD527CAA04900DC2B0E /* Project object */;
 }

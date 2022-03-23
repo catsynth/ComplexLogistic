@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct ComplexLogisticApp: App {
+        
+    @State var zoomReset : Action = {}
+    @State var zoomPrevious : Action = {}
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(zoomReset: $zoomReset, zoomPrevious: $zoomPrevious)
+        }
+        .commands {
+            LogisticCommands(zoomReset: $zoomReset, zoomPrevious: $zoomPrevious)
         }
     }
+    
 }
