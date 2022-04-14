@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct Stack<Element> {
-    var items = [Element]()
-    mutating func push(_ item: Element) {
+class Stack<Element> {
+    private var items = [Element]()
+    func push(_ item: Element) {
         items.append(item)
     }
-    mutating func pop() -> Element {
+    func pop() -> Element {
         return items.removeLast()
     }
-    mutating func clear() {
+    func clear() {
         items = [Element]()
     }
     

@@ -33,7 +33,7 @@ func logisticMap (_ a : Complex<Double>) -> Bool {
 // the very vectorized version
 
 func logisticMapV (_ a : ArraySlice<Complex<Double>>) -> [Bool]  {
-    let iterations = 400
+    let iterations = 800
             
     let size = a.count
 
@@ -50,7 +50,6 @@ func logisticMapV (_ a : ArraySlice<Complex<Double>>) -> [Bool]  {
         initializedCount = size
     }
 
-    
     var z_r = Array<Double>(repeating: 0.5, count: size)
     var z_i = Array<Double>(repeating: 0.0, count: size)
     var j = 0

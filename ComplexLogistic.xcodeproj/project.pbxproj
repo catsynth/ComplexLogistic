@@ -12,7 +12,6 @@
 		373C87C327E93B8D008AEAF2 /* LogisticMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C87C227E93B8D008AEAF2 /* LogisticMap.swift */; };
 		373D3F9227EAD94B005118A8 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D3F9127EAD94B005118A8 /* Stack.swift */; };
 		3775C55327CC9B570044877B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775C55227CC9B570044877B /* Colors.swift */; };
-		3775C55527CEB8FF0044877B /* Memoize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775C55427CEB8FF0044877B /* Memoize.swift */; };
 		3777BFE127CAA04900DC2B0E /* ComplexLogisticApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3777BFE027CAA04900DC2B0E /* ComplexLogisticApp.swift */; };
 		3777BFE327CAA04900DC2B0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3777BFE227CAA04900DC2B0E /* ContentView.swift */; };
 		3777BFE527CAA04C00DC2B0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3777BFE427CAA04C00DC2B0E /* Assets.xcassets */; };
@@ -23,6 +22,7 @@
 		37A9745027CB045B003A6EF8 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 37A9744F27CB045B003A6EF8 /* ComplexModule */; };
 		37A9745227CB045B003A6EF8 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = 37A9745127CB045B003A6EF8 /* Numerics */; };
 		37A9745427CB045B003A6EF8 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = 37A9745327CB045B003A6EF8 /* RealModule */; };
+		37DE69DA27ECCD6C0014C78D /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE69D927ECCD6C0014C78D /* BoundingBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,6 @@
 		373C87C227E93B8D008AEAF2 /* LogisticMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticMap.swift; sourceTree = "<group>"; };
 		373D3F9127EAD94B005118A8 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		3775C55227CC9B570044877B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		3775C55427CEB8FF0044877B /* Memoize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoize.swift; sourceTree = "<group>"; };
 		3777BFDD27CAA04900DC2B0E /* ComplexLogistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplexLogistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3777BFE027CAA04900DC2B0E /* ComplexLogisticApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexLogisticApp.swift; sourceTree = "<group>"; };
 		3777BFE227CAA04900DC2B0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		3785790827CC2C9B001867C8 /* Array+Concurrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Concurrent.swift"; sourceTree = "<group>"; };
 		37A9744A27CAF7FC003A6EF8 /* LogisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticView.swift; sourceTree = "<group>"; };
 		37A9744C27CAFE45003A6EF8 /* Bitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
+		37DE69D927ECCD6C0014C78D /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +83,13 @@
 				37A9744A27CAF7FC003A6EF8 /* LogisticView.swift */,
 				373C87BC27E7C613008AEAF2 /* LogisticCommands.swift */,
 				3775C55227CC9B570044877B /* Colors.swift */,
-				3775C55427CEB8FF0044877B /* Memoize.swift */,
 				3785790827CC2C9B001867C8 /* Array+Concurrent.swift */,
 				373D3F9127EAD94B005118A8 /* Stack.swift */,
 				37A9744C27CAFE45003A6EF8 /* Bitmap.swift */,
 				3777BFE427CAA04C00DC2B0E /* Assets.xcassets */,
 				3777BFE927CAA04C00DC2B0E /* ComplexLogistic.entitlements */,
 				3777BFE627CAA04C00DC2B0E /* Preview Content */,
+				37DE69D927ECCD6C0014C78D /* BoundingBox.swift */,
 			);
 			path = ComplexLogistic;
 			sourceTree = "<group>";
@@ -183,6 +183,7 @@
 				37A9744D27CAFE45003A6EF8 /* Bitmap.swift in Sources */,
 				373C87C127E8E3A0008AEAF2 /* Action.swift in Sources */,
 				373C87C327E93B8D008AEAF2 /* LogisticMap.swift in Sources */,
+				37DE69DA27ECCD6C0014C78D /* BoundingBox.swift in Sources */,
 				373C87BD27E7C613008AEAF2 /* LogisticCommands.swift in Sources */,
 				3775C55327CC9B570044877B /* Colors.swift in Sources */,
 				373D3F9227EAD94B005118A8 /* Stack.swift in Sources */,
@@ -190,7 +191,6 @@
 				37A9744B27CAF7FC003A6EF8 /* LogisticView.swift in Sources */,
 				3785790927CC2C9B001867C8 /* Array+Concurrent.swift in Sources */,
 				3777BFE127CAA04900DC2B0E /* ComplexLogisticApp.swift in Sources */,
-				3775C55527CEB8FF0044877B /* Memoize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

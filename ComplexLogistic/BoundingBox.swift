@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct BoundingBox {
+    let lowerLeft : SIMD2<Double>
+    let upperRight : SIMD2<Double>
+}

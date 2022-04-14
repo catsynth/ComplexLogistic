@@ -12,26 +12,52 @@ struct ContentView: View {
     @State private var lowerLeft = defaultLowerLeft
     @State private var upperRight = defaultUpperRight
 
+    @State private var transientLowerLeft = defaultLowerLeft
+    @State private var transientUpperRight = defaultUpperRight
+
+    @State private var stack = Stack<BoundingBox>()
+    
     @State private var isDragging = false
     @State private var firstPoint = CGPoint()
     @State private var secondPoint = CGPoint()
+    
     
     @Binding var zoomReset : Action
     @Binding var zoomPrevious : Action
             
     var body: some View {
    
-        let logisticView = LogisticView(lowerLeft: $lowerLeft, upperRight: $upperRight, isDragging: $isDragging, firstPoint: $firstPoint, secondPoint: $secondPoint)
+        let logisticView = LogisticView(lowerLeft: $lowerLeft,
+                                        upperRight: $upperRight,
+                                        isDragging: $isDragging,
+                                        firstPoint: $firstPoint,
+                                        secondPoint: $secondPoint,
+                                        transientLowerLeft: $transientLowerLeft,
+                                        transientUpperRight: $transientUpperRight,
+                                        stack : $stack)
+        
         VStack {
             HStack {
-                Text("Lower Left: \(lowerLeft.x), \(lowerLeft.y)")
-                    .padding(20)
-                    .foregroundColor(isDragging ? .white : .tektronixGreen)
-                    .font(.title)
-                Text("Upper Right: \(upperRight.x), \(upperRight.y)")
-                    .padding(20)
-                    .foregroundColor(isDragging ? .white : .tektronixGreen)
-                    .font(.title)
+                if isDragging {
+                    Text("Lower Left: \(transientLowerLeft.x), \(transientLowerLeft.y)")
+                        .padding(20)
+                        .foregroundColor(.white)
+                        .font(.title)
+                    Text("Upper Right: \(transientUpperRight.x), \(transientUpperRight.y)")
+                        .padding(20)
+                        .foregroundColor(.white)
+                        .font(.title)
+                } else {
+                    Text("Lower Left: \(lowerLeft.x), \(lowerLeft.y)")
+                        .padding(20)
+                        .foregroundColor(.tektronixGreen)
+                        .font(.title)
+                    Text("Upper Right: \(upperRight.x), \(upperRight.y)")
+                        .padding(20)
+                        .foregroundColor(.tektronixGreen)
+                        .font(.title)
+
+                }
             }.background(Color.black)
                 .padding([.bottom],-20)
             ZStack {
@@ -39,12 +65,13 @@ struct ContentView: View {
                     .frame(width: 1200, height: 800)
                     .onAppear(perform: {
                         zoomReset = { logisticView.reset() }
+                        zoomPrevious = { logisticView.back() }
                         Task {
                             await logisticView.update()
                         }
                     })
                                         
-                if (isDragging) {
+                if isDragging {
                     let width = abs(firstPoint.x - secondPoint.x)
                     let height = abs(firstPoint.y - secondPoint.y)
                     let x = min(firstPoint.x,secondPoint.x) + 0.5 * width

@@ -28,16 +28,13 @@ class ExtendedView : NSImageView {
         delegate?.mouseDown(with: event)
     }
 
+    
     override func mouseDragged(with event: NSEvent) {
         delegate?.mouseDragged(with: event)
     }
 
     override func mouseUp(with event: NSEvent) {
         delegate?.mouseUp(with: event)
-    }
-    
-    override func keyUp(with event: NSEvent) {
-        print(event)
     }
 }
 
@@ -57,6 +54,12 @@ struct LogisticView: NSViewRepresentable {
     @Binding var isDragging : Bool
     @Binding var firstPoint : CGPoint
     @Binding var secondPoint : CGPoint
+   
+    @Binding var transientLowerLeft : SIMD2<Double>
+    @Binding var transientUpperRight : SIMD2<Double>
+
+    @Binding var stack : Stack<BoundingBox>
+    
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -114,7 +117,7 @@ struct LogisticView: NSViewRepresentable {
         view.image = NSImage(bitmap: bitmap)
     }
 
-    func updatePoints() {
+    private func updatePoints() -> (SIMD2<Double>,SIMD2<Double>) {
         let centerX = 0.5 * (firstPoint.x + secondPoint.x)
         let centerY = 0.5 * (2 * Self.frame.height - firstPoint.y - secondPoint.y)
         
@@ -127,16 +130,26 @@ struct LogisticView: NSViewRepresentable {
         let newCenterX = lowerLeft.x + centerX / Self.frame.width * abs(upperRight.x - lowerLeft.x)
         let newCenterY = lowerLeft.y + centerY / Self.frame.height * abs(upperRight.y - lowerLeft.y)
         
-        lowerLeft.x = newCenterX - 0.5 * newXWidth
-        lowerLeft.y = newCenterY - 0.5 * newYWidth
-        upperRight.x = newCenterX + 0.5 * newXWidth
-        upperRight.y = newCenterY + 0.5 * newYWidth
+        let resultLeft = simd_double2(x: newCenterX - 0.5 * newXWidth, y: newCenterY - 0.5 * newYWidth)
+        let resultRight = simd_double2(x: newCenterX + 0.5 * newXWidth, y: newCenterY + 0.5 * newYWidth)
+        return (resultLeft,resultRight)
     }
     
     
     func reset() {
         lowerLeft = defaultLowerLeft
         upperRight = defaultUpperRight
+        stack.clear()
+        Task {
+            await update()
+        }
+    }
+    
+    func back() {
+        guard !stack.isEmpty else { return }
+        let box = stack.pop()
+        lowerLeft = box.lowerLeft
+        upperRight = box.upperRight
         Task {
             await update()
         }
@@ -158,14 +171,17 @@ struct LogisticView: NSViewRepresentable {
         func mouseDragged(with event: NSEvent) {
             let location = event.locationInWindow
             self.view.secondPoint = self.view.convertPoint(point: location)
+            (self.view.transientLowerLeft,self.view.transientUpperRight) = self.view.updatePoints()
             self.view.isDragging = true
         }
         
         func mouseUp(with event: NSEvent) {
             self.view.isDragging = false
             let location = event.locationInWindow
+            let box = BoundingBox(lowerLeft: self.view.lowerLeft, upperRight: self.view.upperRight)
+            self.view.stack.push(box)
             self.view.secondPoint = self.view.convertPoint(point: location)
-            self.view.updatePoints()
+            (self.view.lowerLeft,self.view.upperRight) = self.view.updatePoints()
             Task {
                 await self.view.update()
             }
